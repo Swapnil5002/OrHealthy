@@ -1,11 +1,12 @@
 import React from 'react';
+import LoaderComponent from '../Components/loader';
 
 const CreateRecipe = ()  => {
 
     return (
-        <>
-            CreateRecipe
-        </>
+        <React.Fragment>
+            {/* <LoaderComponent/> */}
+        </React.Fragment>
     )
 }
 
