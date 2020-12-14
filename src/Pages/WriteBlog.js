@@ -1,7 +1,10 @@
 import React from 'react'
-import { TextField, Grid, Button, Typography, FormControlLabel, Checkbox } from '@material-ui/core'
+import { TextField, Grid, Button, Typography, Chip } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { DropzoneArea } from 'material-ui-dropzone'
+import RightSidebar from './rightSidebar'
+import AddIngredients from './addIngredients'
+import FaceIcon from '@material-ui/icons/Face'
 
 const useStyles = makeStyles({
     textField: {
@@ -33,18 +36,41 @@ const useStyles = makeStyles({
     },
     tableContainer: {
         marginTop: '20px'
+    },
+    rightBar: {
+        width: '50%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flexEnd',
+        padding: '25px'
+    },
+    chip: {
+        width: '25%',
+        marginTop: '5%'
+    },
+    barButtons: {
+        display: 'flex',
+        flexDirection: 'row'
     }
   });
 
 const WriteBlog = ()  => {
     const classes = useStyles();
 
+    const handleClick = () => {
+        console.log("Handle Click")
+    }
+
+    const  handleDelete = () => {
+        console.log("Handle Delete")
+    }
+
     return (
         <Grid className={classes.gridColumn}>
         <Grid className={classes.grid}>
             <Typography className={classes.tyography}>Choose ingredient and write your Blog:</Typography>
 
-            <TextField id="outlined-basic" label="Blog Title" variant="outlined" InputLabelProps={{ shrink: true }}         className={classes.textField}/>
+            <TextField id="outlined-basic" label="Blog Title" variant="outlined" InputLabelProps={{ shrink: true }} className={classes.textField}/>
 
             <TextField id="outlined-basic" label="Mini Blog" variant="outlined" InputLabelProps={{ shrink: true }} multiline rows={4} className={classes.textField}/>
 
@@ -63,18 +89,19 @@ const WriteBlog = ()  => {
                 <Button variant="contained" color="primary" size='small'>Save</Button>
             </Grid>
         </Grid>
-        <Grid>
-        <FormControlLabel
-        control={
-          <Checkbox
-            // checked={state.checkedB}
-            // onChange={handleChange}
-            name="checkedB"
-            color="primary"
-          />
-        }
-        label="Cucumber (खीरा/Kheera)"
-      />
+        <Grid className={classes.rightBar}>
+            <Grid className={classes.barButtons}>
+                <RightSidebar/>
+                <AddIngredients/>
+            </Grid>
+
+            <Chip
+                icon={<FaceIcon />}
+                label="Clickable deletable"
+                onClick={handleClick}
+                onDelete={handleDelete}
+                className={classes.chip}
+            />
         </Grid>
         </Grid>
     )
