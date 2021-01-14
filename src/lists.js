@@ -9,10 +9,11 @@ export const Options = [
   ]
 
 export const SidebarData = [
-    {name: 'Design a Recipe', link: '/create-recipe', icon: BlogIcon},
-    {name: 'Design a Meal Plan', link: '/create-recipe', icon: BlogIcon},
-    {name: 'Write a Blog', link: '/write-a-blog', icon: BlogIcon},
-    {name: 'Upload Files', link: '/upload-a-file', icon: CookingBook}
+    {name: 'My Profile', link: '/my-profile', icon: BlogIcon},
+    {name: 'Add Recipe', link: '/add-recipe', icon: BlogIcon},
+    {name: 'All Recipe', link: '/all-recipe', icon: BlogIcon},
+    {name: 'Menu design', link: '/upload-a-file', icon: CookingBook},
+    {name: 'Sign Out', link: '/sign-out', icon: CookingBook}
   ]
 
 export const formLabelList = [

@@ -18,11 +18,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1
   },
   appBar: {
-    backgroundColor: 'white',
-    color: 'black'
+    color: 'black',
+    backgroundColor: 'white'
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: 'grey'
   },
   title: {
     flexGrow: 1,
@@ -53,9 +54,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: 'white'
   },
   inputRoot: {
-    color: 'inherit',
+    color: 'white',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -103,9 +105,9 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Grid className={classes.title} variant="h6" onClick={handleHeaderClick} noWrap>
+          {/* <Grid className={classes.title} variant="h6" onClick={handleHeaderClick} noWrap>
             <img src={OrhealthyLogo} alt="Image" className={classes.logo}/>
-          </Grid>
+          </Grid> */}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

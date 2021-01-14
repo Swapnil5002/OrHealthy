@@ -68,7 +68,7 @@ const WriteBlog = ()  => {
     return (
         <Grid className={classes.gridColumn}>
         <Grid className={classes.grid}>
-            <Typography className={classes.tyography}>Write your Blognpm install react-loader-spinner --save</Typography>
+            <Typography className={classes.tyography}>Write your Blog</Typography>
 
             <TextField id="outlined-basic" label="Blog Title" variant="outlined" InputLabelProps={{ shrink: true }} className={classes.textField}/>
 

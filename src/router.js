@@ -4,9 +4,10 @@ import Header from './Pages/header'
 import Sidebar from './Pages/sidebar'
 import Dashboard from './Pages/dashboard'
 import Login from './Pages/login'
-import CreateRecipe from './Pages/createRecipe'
+import CreateRecipe from './Pages/addRecipe'
 import WriteBlog from './Pages/WriteBlog'
 import UploadFile from './Pages/UploadFiles'
+import MyProfile from './Pages/MyProfile/myProfile'
 
 const ProtectedRoute = ({ children, ...rest }) => {
 
@@ -20,8 +21,12 @@ const ProtectedRoute = ({ children, ...rest }) => {
       chilComponent: () => <Login/>
     },
     {
-      path: '/create-recipe',
+      path: '/add-recipe',
       chilComponent: () => <CreateRecipe/>
+    },
+    {
+      path: '/my-profile',
+      chilComponent: () => <MyProfile/>
     },
     {
       path: '/write-a-blog',

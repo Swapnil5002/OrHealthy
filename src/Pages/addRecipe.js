@@ -1,7 +1,7 @@
 import React from 'react';
 import LoaderComponent from '../Components/loader';
 
-const CreateRecipe = ()  => {
+const AddRecipe = ()  => {
 
     return (
         <React.Fragment>
@@ -10,4 +10,4 @@ const CreateRecipe = ()  => {
     )
 }
 
-export default CreateRecipe
+export default AddRecipe
