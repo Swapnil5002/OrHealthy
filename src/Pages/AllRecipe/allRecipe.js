@@ -1,8 +1,9 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import FadeIn from 'react-fade-in';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import FadeIn from 'react-fade-in';
+import PageHeader from '../../Components/PageHeader/pageHeader.js';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -70,19 +71,16 @@ const useStyles = makeStyles((theme) => ({
 
 const AllRecipe = () => {
     const classes = useStyles();
+    const [pageHeader, setpageHeader] = useState('All Recipe');
 
   return (
       <React.Fragment>
-        <FadeIn className={classes.fadeIn}>
-            <Grid className={classes.container}>
-                <Typography className={classes.profileText}>All Recipe</Typography>
-            </Grid>
-        </FadeIn>
-        <div style={{ height: 550, width: '100%' }}>
-            <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+       <PageHeader pageHeader={pageHeader}/>
+       <div style={{ height: 550, width: '100%' }}>
+          <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
         </div>
       </React.Fragment>
     );
 }
 
-export default AllRecipe
+export default AllRecipe;

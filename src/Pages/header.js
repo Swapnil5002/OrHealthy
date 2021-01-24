@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import { Grid, Toolbar, AppBar } from '@material-ui/core';
-import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
+import React, { useState } from 'react'
+import IconButton from '@material-ui/core/IconButton'
+import { Grid, Toolbar, AppBar } from '@material-ui/core'
+import InputBase from '@material-ui/core/InputBase'
+import { fade, makeStyles } from '@material-ui/core/styles'
+import MenuIcon from '@material-ui/icons/Menu'
+import SearchIcon from '@material-ui/icons/Search'
 import Sidebar from './sidebar'
-import OrhealthyLogo from '../assets/OrhealthyLogo.jpg'
-import { useHistory } from 'react-router-dom';
+import OrhealthyLogo from '../assets/OrHealthyLogo.png'
+import { useHistory } from 'react-router-dom'
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined'
 
 const useStyles = makeStyles((theme) => ({
   logo: {
-    width: '10%',
+    width: '5%',
     padding: '0 15px'
   },
   root: {
@@ -19,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     color: 'black',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    justifyContent: 'space-between'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -34,13 +36,12 @@ const useStyles = makeStyles((theme) => ({
   },
   search: {
     position: 'relative',
+    marginRight: '25px',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade(theme.palette.common.black, 0.15),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: fade(theme.palette.common.black, 0.25),
     },
-    marginLeft: 0,
-    width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
       width: 'auto',
@@ -54,14 +55,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white'
+    color: 'black'
   },
   inputRoot: {
     color: 'white',
   },
+  toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -95,7 +99,7 @@ const Header = () => {
     <div className={classes.root}>
       <Sidebar open={open} handleCloseDrawer={handleCloseDrawer}/>
       <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -105,9 +109,9 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Grid className={classes.title} variant="h6" onClick={handleHeaderClick} noWrap>
+          <Grid className={classes.title} variant="h6" onClick={handleHeaderClick} noWrap>
             <img src={OrhealthyLogo} alt="Image" className={classes.logo}/>
-          </Grid> */}
+          </Grid>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -119,8 +123,10 @@ const Header = () => {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              inputLabelProps={{ 'color': 'black'}}
             />
           </div>
+          <ExitToAppOutlinedIcon/>
         </Toolbar>
       </AppBar>
     </div>

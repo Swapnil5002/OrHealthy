@@ -7,8 +7,10 @@ import Login from './Pages/login'
 import CreateRecipe from './Pages/AddRecipe/addRecipe'
 import WriteBlog from './Pages/WriteBlog'
 import UploadFile from './Pages/UploadFiles'
-import MyProfile from './Pages/MyProfile/myProfile'
-import AllRecipe from './Pages/AllRecipe.js/allRecipe'
+import PlaceOrder from './Pages/PlaceOrder/placeorder'
+import AllRecipe from './Pages/AllRecipe/allRecipe'
+import AllOrders from './Pages/AllOrders/allOrders'
+import DesignRecipe from './Pages/DesignRecipe/designRecipe'
 
 const ProtectedRoute = ({ children, ...rest }) => {
 
@@ -18,16 +20,16 @@ const ProtectedRoute = ({ children, ...rest }) => {
       chilComponent: () => <Dashboard/>
     },
     {
-      path: '/login',
-      chilComponent: () => <Login/>
+      path: '/place-order',
+      chilComponent: () => <PlaceOrder/>
+    },    
+    {
+      path: '/all-orders',
+      chilComponent: () => <AllOrders/>
     },
     {
-      path: '/add-recipe',
-      chilComponent: () => <CreateRecipe/>
-    },
-    {
-      path: '/my-profile',
-      chilComponent: () => <MyProfile/>
+      path: '/design-recipe',
+      chilComponent: () => <DesignRecipe/>
     },
     {
       path: '/write-a-blog',

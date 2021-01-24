@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Typography, Grid, MenuItem, Button, FormControl, InputLabel, Select } from '@material-ui/core';
-import FadeIn from 'react-fade-in';
 import Avatar from '@material-ui/core/Avatar';
+import PageHeader from '../../Components/PageHeader/pageHeader.js'
   
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,15 +69,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AddRecipe() {
   const classes = useStyles();
-  const [currency, setCurrency] = React.useState('EUR');
+  const [pageHeader, setpageHeader] = useState('Add Recipe');
 
   return (
     <React.Fragment>
-        <FadeIn className={classes.fadeIn}>
-            <Grid className={classes.container}>
-                <Typography className={classes.profileText}>Add Recipe</Typography>
-            </Grid>
-        </FadeIn>
+       <PageHeader pageHeader={pageHeader}/>   
         <form className={classes.root} noValidate autoComplete="off">
         <Grid className={classes.form}>
             <div className={classes.grid}>
@@ -124,7 +120,6 @@ export default function AddRecipe() {
                         <MenuItem value={20}>2</MenuItem>
                         </Select>
                 </FormControl> */}
-                
             </div>
             <div className={classes.grid}>
                 <TextField id="description" label="Recipe Description/About" type="text" className={classes.textfield}/>
