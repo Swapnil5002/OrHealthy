@@ -73,19 +73,7 @@ export default function PlaceOrder() {
           <Grid className={classes.grid1}>
             <TextField label="Item Name" id="item-name" type='text' InputLabelProps={{shrink: true}} className={classes.textfield} fullWidth/>
           
-            <FormControl className={classes.formControl} fullWidth InputLabelProps={{shrink: true}}>
-              <InputLabel id="quantity" InputLabelProps={{shrink: true}}>Quantity</InputLabel>
-              <Select
-                labelId="quantity"
-                id="quantity"
-                // value={age}
-                // onChange={handleChange}
-              >
-                <MenuItem value={10}>one</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
+            <TextField label="Quantity" id="qunatity" type='quantity' type='number' InputLabelProps={{shrink: true}} className={classes.textfield} fullWidth/>
 
             <FormControl className={classes.formControl} fullWidth InputLabelProps={{shrink: true}}>
               <InputLabel id="units" InputLabelProps={{shrink: true}}>Units</InputLabel>
@@ -95,9 +83,8 @@ export default function PlaceOrder() {
                 // value={age}
                 // onChange={handleChange}
               >
-                <MenuItem value={10}>one</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={10}>grams</MenuItem>
+                <MenuItem value={20}>mgms</MenuItem>
               </Select>
             </FormControl>
 
@@ -109,9 +96,9 @@ export default function PlaceOrder() {
                 // value={age}
                 // onChange={handleChange}
               >
-                <MenuItem value={10}>one</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={10}>Dine Inn</MenuItem>
+                <MenuItem value={20}>Order</MenuItem>
+                <MenuItem value={30}>Take Away</MenuItem>
               </Select>
             </FormControl>
 
